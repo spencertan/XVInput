@@ -61,10 +61,10 @@ public:
     #endif
   }
 
-  void Update() noexcept
+  void Update(f32 dt) noexcept
   {
     for ( auto &device : m_devices )
-      device->Update();
+      device->Update(dt);
   }
 
   #ifdef XV_PLATFORM_WINDOWS
