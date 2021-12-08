@@ -1,6 +1,5 @@
 #pragma once
 
-#include "EnumGamepad.h"
 #include "GamepadState.h"
 
 #define DefineGamepadButton(btn)                                                  \

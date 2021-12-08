@@ -1,6 +1,5 @@
 #pragma once
 
-#include "EnumKeyboard.h"
 #include "KeyboardState.h"
 
 #define DefineKeyControlKey(key)                                  \

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "EnumMouse.h"
 #include "MouseState.h"
 
 #define DefineMouseControlButton(btn)                                           \

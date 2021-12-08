@@ -18,6 +18,9 @@ struct Vec2f
 
 
 #include <Device/InputDevice.h>
+#include <Device/Keyboard/EnumKeyboard.h>
+#include <Device/Mouse/EnumMouse.h>
+#include <Device/Gamepad/EnumGamepad.h>
 
 #include <Control/AnyKeyControl.h> 
 #include <Control/ButtonControl.h>
