@@ -17,20 +17,12 @@ namespace Xivi::Input::Control
 
     f32 X() const noexcept
     {
-#ifdef XV_MATH
       return m_vec.x;
-#else
-      return std::get<1>(m_vec);
-#endif
     }
 
     f32 Y() const noexcept
     {
-#ifdef XV_MATH
       return m_vec.y;
-#else
-      return std::get<1>(m_vec);
-#endif
     }
 
     Vec2f Vector() const noexcept

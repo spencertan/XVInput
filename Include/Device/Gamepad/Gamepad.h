@@ -98,9 +98,8 @@ namespace Xivi::Input::Device
       return m_api;
     }
 
-    void Update(f32 dt) noexcept override
+    void Update([[maybe_unused]] f32 dt) noexcept override
     {
-      [[maybe_unused]] dt;
       if (!Enabled())
         return;
 

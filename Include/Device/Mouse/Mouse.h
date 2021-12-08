@@ -42,7 +42,7 @@ public:
                                    m_state.m_scroll };
   }
 
-    Input::Control::Vector2 Position() noexcept
+  Input::Control::Vector2 Position() noexcept
   {
     return Input::Control::Vector2 { *this,
                                    m_state.m_position };

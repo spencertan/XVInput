@@ -7,7 +7,13 @@
 #ifdef XVMATH
 // TBC
 #else
-using Vec2f = std::tuple<Xivi::f32,Xivi::f32>;
+namespace Xivi
+{
+struct Vec2f 
+{
+  f32 x,y; 
+};
+}
 #endif
 
 
