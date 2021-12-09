@@ -5,25 +5,25 @@ namespace Xivi::Input::Control
 
 class AnyKey
 {
-  Input::Device::Instance& m_device;
-  bool &m_any;
+  Ptr<Input::Device::Instance> m_device{nullptr};
+  Ptr<bool> m_any {nullptr};
 
 public:
-
+  AnyKey() = default;
   AnyKey( Input::Device::Instance &device,
           bool &any) :
-    m_device( device ),
-    m_any(any)
+    m_device( &device ),
+    m_any(&any)
   {}
 
-  Input::Device::Instance &Device()
+  inline Ptr<Input::Device::Instance> Device()
   {
-    return m_device;
+    return m_device ? m_device : nullptr;
   }
 
-  bool Value()
+  inline bool Value()
   {
-    return m_any;
+    return m_device ? m_any : false;
   }
 };
 

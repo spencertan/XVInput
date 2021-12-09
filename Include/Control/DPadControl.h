@@ -4,53 +4,57 @@ namespace Xivi::Input::Control
 {
 class DPad
 {
-  Input::Device::Instance &m_device;
+  Ptr<Input::Device::Instance> m_device { nullptr };
   Button m_up;
   Button m_down;
   Button m_left;
   Button m_right;
 
 public:
+  DPad() = default;
   DPad( Input::Device::Instance &device,
         Button up,
         Button down,
         Button left,
         Button right ) :
-    m_device( device ),
+    m_device( &device ),
     m_up( up ),
     m_down( down ),
     m_left( left ),
     m_right( right )
   {}
 
-  Input::Device::Instance &Device()
+  inline Ptr<Input::Device::Instance> Device()
   {
-    return m_device;
+    return m_device ? m_device : nullptr;
   }
 
-  Button Up() const noexcept
+  inline Button Up() const noexcept
   {
     return m_up;
   }
 
-  Button Down() const noexcept
+  inline Button Down() const noexcept
   {
     return m_down;
   }
 
-  Button Left() const noexcept
+  inline Button Left() const noexcept
   {
     return m_left;
   }
 
-  Button Right() const noexcept
+  inline Button Right() const noexcept
   {
     return m_right;
   }
 
-  Vec2f Vector() const noexcept
+  inline Vec2f Vector() const noexcept
   {
-    Vec2f result {0.0f, 0.0f};
+    if ( !m_device )
+      return { 0.0f, 0.0f };
+
+    Vec2f result { 0.0f, 0.0f };
     if ( m_up.Pressed() )
       result.y += 1.0f;
     if ( m_down.Pressed() )

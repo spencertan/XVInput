@@ -3,41 +3,42 @@
 namespace Xivi::Input::Control
 {
 
-  class Button
+class Button
+{
+protected:
+  Ptr<Input::Device::Instance> m_device { nullptr };
+  Ptr<bool> m_prev { nullptr };
+  Ptr<bool> m_curr { nullptr };
+
+public:
+  Button() = default;
+  Button( Input::Device::Instance &device,
+          bool &prev,
+          bool &curr ) :
+    m_device( &device ),
+    m_prev( &prev ),
+    m_curr( &curr )
+  {}
+
+  inline Ptr<Input::Device::Instance> Device()
   {
-    Input::Device::Instance &m_device;
-    bool &m_prev;
-    bool &m_curr;
+    return m_device ? m_device : nullptr;
+  }
 
-  public:
-    Button(Input::Device::Instance &device,
-            bool &prev, 
-            bool &curr): 
-      m_device(device), 
-      m_prev(prev), 
-      m_curr(curr)
-    {
-    }
+  inline bool Triggered() const noexcept
+  {
+    return m_device ? ( ( *m_prev & *m_curr ) ^ *m_curr ) : false;
+  }
 
-    Input::Device::Instance& Device()
-    {
-      return m_device;
-    }
+  inline bool Pressed() const noexcept
+  {
+    return m_device ? ( *m_prev && *m_curr ) : false;
+  }
 
-    inline bool Triggered() const noexcept
-    {
-      return (m_prev & m_curr) ^ m_curr;
-    }
-
-    inline bool Pressed() const noexcept
-    {
-      return m_prev && m_curr;
-    }
-
-    inline bool Released() const noexcept
-    {
-      return m_prev && !m_curr;
-    }
-  };
+  inline bool Released() const noexcept
+  {
+    return m_device ? ( *m_prev && !( *m_curr ) ) : false;
+  }
+};
 
 }
