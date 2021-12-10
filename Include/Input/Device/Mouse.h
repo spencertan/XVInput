@@ -1,6 +1,6 @@
 #pragma once
 
-#include "MouseState.h"
+#include <Input/Device/Mouse/State.h>
 
 #define DefineMouseControlButton(btn)                                           \
 Input::Control::Button btn##Button() noexcept {                                 \

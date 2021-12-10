@@ -17,22 +17,22 @@ struct Vec2f
 #endif
 
 
-#include <Device/InputDevice.h>
-#include <Device/Keyboard/EnumKeyboard.h>
-#include <Device/Mouse/EnumMouse.h>
-#include <Device/Gamepad/EnumGamepad.h>
+#include <Input/Device/Instance.h>
+#include <Input/Device/Keyboard/Enum.h>
+#include <Input/Device/Mouse/Enum.h>
+#include <Input/Device/Gamepad/Enum.h>
 
-#include <Control/AnyKeyControl.h> 
-#include <Control/ButtonControl.h>
-#include <Control/DPadControl.h>
-#include <Control/IntegerControl.h>
-#include <Control/FloatControl.h>
-#include <Control/KeyControl.h>
-#include <Control/Vector2Control.h>
+#include <Input/Control/AnyKey.h> 
+#include <Input/Control/Button.h>
+#include <Input/Control/DPad.h>
+#include <Input/Control/Integer.h>
+#include <Input/Control/Float.h>
+#include <Input/Control/Key.h>
+#include <Input/Control/Vector2.h>
 
-#include <Device/Mouse/Mouse.h>
-#include <Device/Keyboard/Keyboard.h>
-#include <Device/Gamepad/Gamepad.h>
+#include <Input/Device/Mouse.h>
+#include <Input/Device/Keyboard.h>
+#include <Input/Device/Gamepad.h>
 
 namespace Xivi::Input
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "GamepadState.h"
+#include <Input/Device/Gamepad/State.h>
 
 #define DefineGamepadButton(btn)                                                  \
   Input::Control::Button btn() noexcept                                           \

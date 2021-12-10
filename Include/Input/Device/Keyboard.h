@@ -1,6 +1,6 @@
 #pragma once
 
-#include "KeyboardState.h"
+#include <Input/Device/Keyboard/State.h>
 
 #define DefineKeyControlKey(key)                                  \
   Input::Control::Key key() noexcept                              \
