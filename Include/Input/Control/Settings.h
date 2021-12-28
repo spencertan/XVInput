@@ -2,5 +2,10 @@
 
 namespace Xivi::Input::Control
 {
-  
+  struct Settings
+  {
+    
+
+
+  }
 }
