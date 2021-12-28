@@ -93,6 +93,7 @@ public:
       return m_devices.emplace_back( MakeUnique<Device::Gamepad>( type, name, m_gamepad_count++ ) ).get();
       break;
     }
+    return nullptr;
   }
 
   void RemoveDevice( const Device::Name &name )
